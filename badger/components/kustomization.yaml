@@ -12,6 +12,14 @@ labels:
 
 patches:
   - target:
+      name: .*
+      kind: HelmRelease
+    patch: |
+      - op: replace
+        path: /spec/values/podAnnotations
+        value:
+          test: "1"
+  - target:
       name: alpha
       kind: HelmRelease
     patch: |
